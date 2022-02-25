@@ -15,6 +15,7 @@
 /* Interrupt Service Routine */
 void user_isr( void )
 {
+	return;
 }
 
 /* Lab-specific initialization goes here */
