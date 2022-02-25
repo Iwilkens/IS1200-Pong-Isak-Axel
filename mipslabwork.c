@@ -1,15 +1,13 @@
 /* mipslabwork.c
-
    This file written 2015 by F Lundevall
    Updated 2017-04-21 by F Lundevall
-
    This file should be changed by YOU! So you must
    add comment(s) here with your name(s) and date(s):
-
-   This file modified 2022-02-15 by Isak Wilkens
-
+   This file modified 2022-02-25 by @Isak Wilkens and @Axel Månson Lokrantz
    For copyright and licensing, see file COPYING */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
@@ -17,13 +15,7 @@
 volatile int *newTRISE;		// globala pointers för TRISE
 volatile int *newPORTE;		// samt PORTE
 
-int prime = 1234567;
 
-int timeoutcount = 0;
-
-int mytime = 0x0000;		// initialize mytime to 0 to see how many ticks have passed
-
-char textstring[] = "text, more text, and even more text!";
 
 /* Interrupt Service Routine */
 void user_isr( void )
