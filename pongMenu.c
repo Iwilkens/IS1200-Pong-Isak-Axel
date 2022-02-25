@@ -6,11 +6,12 @@
 
 float menu_options = 1;
 
-void menu();
+void menu()
 {
-  display_string(0, "Singleplayer");
-  display_string(1, "Multiplayer");
-  display_string(2, "Inverse pong");
+  display_string(1, "PONG");
+  display_string(1, "Singleplayer");
+  display_string(2, "Multiplayer");
+  display_string(3, "Inverse pong");
   
   display_update();
 }
