@@ -250,3 +250,11 @@ _gen_exception:
 	nop
 
 .end _gen_exception
+
+#change in file by @Isak Wilkens
+.text
+.global enable_interrupt
+enable_interrupt:
+	ei			# Enable interrupt instruction
+	jr	$ra		# Return to caller		
+	nop			# Delay slot just in case
