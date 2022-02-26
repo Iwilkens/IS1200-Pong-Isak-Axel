@@ -1,1 +1,2 @@
-Skärmen har 32x 128 pixlar. Den är uppdelat på pages vad betyder det?
+DISPLAY
+Skärmen har 32x 128 pixlar. Skärmen har 512 minnesbytes för alla pixlar (4096 bitar, 32x128).
