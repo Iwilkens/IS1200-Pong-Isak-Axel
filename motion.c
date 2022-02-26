@@ -4,7 +4,7 @@
 #include "mipslab.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "pong.h"
 
 // Paddle size / speed
 float paddle_height = 8;
