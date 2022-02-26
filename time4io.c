@@ -9,5 +9,6 @@ int getsw(void)
 
 int getbtns(void)
 {
-	return (PORTD >> 5) & 0x0007;	// (from header file) Read input 5-7 (push buttons. För att sedan returnera detta. 
+	// Binary OR Operator copies a bit if it exists in either operand.
+	return (PORTD >> 5) & 0x0007 | (PORTF >> 1) & 0x1; // (from header file) Read input 5-7 (push buttons. För att sedan returnera detta. 
 }
