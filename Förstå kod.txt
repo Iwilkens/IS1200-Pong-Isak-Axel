@@ -1,0 +1,1 @@
+Skärmen har 32x 128 pixlar. Den är uppdelat på pages vad betyder det?
