@@ -6,10 +6,10 @@
 #include "pong.h"
 
 uint8_t display_array[32][128];
-unit8_t	display_pixels[512];
+uint8_t	display_pixels[512];
 
 
-void dislplayCLear()
+void display_clear()
 {
 	int column, row, i;
 	
@@ -25,4 +25,12 @@ void dislplayCLear()
 	{
 		display_pixels[i] = 0;
 	}
+}
+
+void string_clear()
+{
+	display_string(0, "");
+	display_string(1, "");
+	display_string(2, "");
+	display_update();
 }
