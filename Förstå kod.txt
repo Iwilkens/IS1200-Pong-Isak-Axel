@@ -1,2 +1,11 @@
 DISPLAY
 Skärmen har 32x 128 pixlar. Skärmen har 512 minnesbytes för alla pixlar (4096 bitar, 32x128).
+
+PORTF = Button 1 längst till höger.
+
+Button 1 = buttons (8).
+Button 2 = buttons (4).
+Button 3 = buttons (2).
+Button 4 = buttons (1).
+
+
