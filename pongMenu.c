@@ -3,6 +3,7 @@
 #include "mipslab.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "pong.h"
 
 
 int menu_chooser = 0;
@@ -10,9 +11,6 @@ int dogmenu_running = 0;
 
 void menu()
 {
-  delay(150);      // without delay it gets updated to fast(since we dont have a timer
-  
-  
   if(menu_chooser == 0)
   {
 	  display_string(0, "->Main Menu");
@@ -32,7 +30,11 @@ void menu()
 	  display_string(2, "->Multiplayer");
 	  
 	  if( getbtns() & 0x1)
+	  {
+		string_clear();
 		dogmenu_running = 1;
+	  }
+		
   }	  
   
   if ((getbtns() & 0x2) && (menu_chooser < 2))
@@ -45,6 +47,4 @@ void menu()
 void dogmenu()
 {
 	display_image(96, icon);
-	if( getbtns() & 0x1)
-		dogmenu_running = 0;
 }
