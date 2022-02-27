@@ -34,3 +34,23 @@ void string_clear()
 	display_string(2, "");
 	display_update();
 }
+
+// Binary set of two dimensional pixel array
+void set_displayArray(int x, int y, int height, int width)
+{
+	int row, column;
+	for (row = 0; column < 128; column++)
+	{
+		for( column = 0; column < 128; column++)
+		{
+			if(row >= y && row <= (y + height) && column >= x && column <= (x + width))
+				display_array[row][column] = 1;
+		}
+	}
+}
+
+// cast of two dimensional array to screen
+void castToScreen()
+{
+	int 
+}
