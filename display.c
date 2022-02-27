@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include "pong.h"
 
-uint8_t display_array[32][128];
-uint8_t	display_pixels[512];
+uint8_t display_array[32][128];  //Declare bitmap array size
+uint8_t	display_pixels[512];	 //Declare bitmap array pixels
 
 
 void display_clear()
@@ -52,5 +52,26 @@ void set_displayArray(int x, int y, int height, int width)
 // cast of two dimensional array to screen
 void castToScreen()
 {
-	int 
+	int page, column, row;
+	uint8_t pixelCount = 0;
+	uint8_t binaryCount = 1;
+	
+	for(page = 0; page < 4; page++)
+	{
+		for(column = 0; coulumn < 128; column++
+		{
+			pixelCount = 0;
+			binaryCount = 1;
+			for(row = 0; row < 8; row++)
+			{
+			    if(display_array[8 * page + row][column]
+			       {
+				       pixelCount |= binaryCount;
+			       }
+			     binaryCount <<= 1;
+			 }
+			 display_pixels[column + page * 128] = pixelCount;
+			   
+		 }
+	}		
 }
