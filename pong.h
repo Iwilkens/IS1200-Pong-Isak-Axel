@@ -17,3 +17,4 @@ extern uint8_t	display_pixels[512];
 // Screen functions
 void display_clear();
 void string_clear();
+void castToScreen();
