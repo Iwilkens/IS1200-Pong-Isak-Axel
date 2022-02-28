@@ -55,7 +55,7 @@ void singleplayer_motion (buttons)
   
   // If button X is pressed and paddle y position is less than screen height. 
   // IF STATEMENT TO MOVE PADDLE 1 DOWN.
-  if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))
+  if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height)))
   {
       paddle1_down = 1;
       paddle1_y += paddle_speed;
@@ -78,7 +78,7 @@ void singleplayer_motion (buttons)
       paddle2_down = 0;
       paddle2_up = 0;
       
-      if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height))
+      if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height)))
       {
           paddle2_y += paddle_speed;
           paddle2_up = 1;
@@ -88,7 +88,7 @@ void singleplayer_motion (buttons)
         paddle2_y -= paddle_speed;
         paddle2_down = 1
       }
-      if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))
+      if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height)))
       {
         paddle1_y += paddle_speed;
         paddle1_up = 1;
@@ -123,10 +123,40 @@ void singleplayer_motion (buttons)
             }
             
             // ** Tror detta if statement är gjort för att bollen inte rörde sig om dem ville **
-            if ((ball_speed_y 
-                
+            if ((ball_speed_y < 0.3) && (ball_y <= 10))
+            {
+              count++;
+              if(count >= 10)
+              {
+                ball_speed = 1;
+                count = 0;
+              }
+              else
+              {
+                count = 0;
+              }
+            }   
           }
           
+          void computer_motion(void)
+          {
+            // sets paddle 2 values (which are used by AI) to 0.
+            paddle2_up = 0;
+            paddle2_down = 0;
+            // ** TOG BORT AI DIFFICULTY **, får se om det funkar utan.
+            // ** OSÄKER PÅ SPEED I DENNA FIL, har den med difficulty att göra? **
+            if ((ball_y < paddle2_y) && (paddle2_y > 0))
+            {
+                paddle2_y -= paddle_speed;
+                paddle_up = 1;
+            }
+            
+            if ((ball_y > paddle2_y) && (paddle2_y < (32-paddle_height)))
+            {
+                paddle_y += paddle_speed;
+                paddle_down = 1;
+            } 
+          }
 
 
 
