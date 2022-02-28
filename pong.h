@@ -18,3 +18,8 @@ extern uint8_t	display_pixels[512];
 void display_clear();
 void string_clear();
 void castToScreen();
+
+// Motion functions
+void singleplayer_motion();
+void multiplayer_motion();
+void computer_motion();
