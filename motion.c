@@ -25,7 +25,7 @@ float paddle2_up = 0;
 float paddle2_down = 0;
 
 // Ball variables
-float ball_size = 3;
+float ball_shape = 3;
 // Ball initial speed
 float ball_speed_x = 1;
 float ball_speed_y = 0;
@@ -115,7 +115,7 @@ void singleplayer_motion (buttons)
               ball_speed_y = -1.7;
             
             // If statement to give ball negative speed when it collisions with oled y border.
-            if (ball_y < 1 || ball_y > (31 - ball_size)
+            if (ball_y < 1 || ball_y > (31 - ball_shape)
             {
                ball_speed_y = -(ball_speed_y);
             }
