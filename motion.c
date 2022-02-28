@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <pic32mx.h>
-// mipslab.h headerfil, declares functions 
+// mipslab.h headerfil, declares functions
+// ** Har vi kvar mipslab.h? **
 #include "mipslab.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,17 +40,93 @@ int ball_y = 32 / 2;
 // ** ??? ***
 int count = 0;
 
-void player1_motion (buttons)
+// Function for singleplayer motion.
+// (player_movement_one)
+void singleplayer_motion (buttons)
 {
   // reset values.
   paddle1_down = 0;
   paddle1_up = 0;
   
+  // **BYT DESSA KNAPPAR?
+  // **ÄR Paranteserna korrekta?**
+  // **Mindre Y-värde = Paddle rör sig uppåt, varför inte tvärt om?**
+  // **Behövs testas att skriva tvärt om precis som i multiplayer**
   
-  
-  
-  
-}
+  // If button X is pressed and paddle y position is less than screen height. 
+  // IF STATEMENT TO MOVE PADDLE 1 DOWN.
+  if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))
+  {
+      paddle1_down = 1;
+      paddle1_y += paddle_speed;
+  }
+  // IF STATMENT TO MOVE PADDLE 1 UP.
+  if ((buttons & 0x8) && (paddle1_y > 0))
+  {
+      paddle1_up = 1;
+      paddle1_y -= paddle_speed;
+   }
+  }
+      
+  // Function for multiplayer movement.
+  // (player_movement_two)
+  void multiplayer_motion (buttons)
+  {    
+      // reset values.
+      paddle1_down = 0;
+      paddle1_up = 0;
+      paddle2_down = 0;
+      paddle2_up = 0;
+      
+      if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height))
+      {
+          paddle2_y += paddle_speed;
+          paddle2_up = 1;
+      }
+      if ((buttons & 0x2) && (paddle2_y > 0))
+      {
+        paddle2_y -= paddle_speed;
+        paddle2_down = 1
+      }
+      if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))
+      {
+        paddle1_y += paddle_speed;
+        paddle1_up = 1;
+      }
+      if ((buttons & 0x8) && (paddle1_y > 0))
+      {
+        paddle_y -= paddle_speed;
+        paddle1_down = 1;
+      }
+   }
+          
+   // ** BÖR TESTA ATT KÖRA PROGRAMMET HELT UTAN BOLL TILL ATT BÖRJA MED FÖR ATT SE ATT PADDLARNA FUNKAR SOM DEM SKA **
+          
+          void ball_motion()
+          {
+            ball_y += ball_speed_y; 
+            ball_x += ball_speed_x;
+            
+            // ** Om hastigheten blir för stor? **
+            // ** Testa med olika värden för att se om denna behövs **
+            
+            if (ball_speed_y > 1.7)
+              ball_speed_y = 1.7;
+            
+            if (ball_speed_y < -1.7)
+              ball_speed_y = -1.7;
+            
+            // If statement to give ball negative speed when it collisions with oled y border.
+            if (ball_y < 1 || ball_y > (31 - ball_size)
+            {
+               ball_speed_y = -(ball_speed_y);
+            }
+            
+            // ** Tror detta if statement är gjort för att bollen inte rörde sig om dem ville **
+            if ((ball_speed_y 
+                
+          }
+          
 
 
 
