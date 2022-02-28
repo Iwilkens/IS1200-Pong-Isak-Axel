@@ -1,7 +1,5 @@
 #include <stdint.h>
 #include <pic32mx.h>
-// mipslab.h headerfil, declares functions
-// ** Har vi kvar mipslab.h? **
 #include "mipslab.h"
 #include <stdio.h>
 #include <stdlib.h>
