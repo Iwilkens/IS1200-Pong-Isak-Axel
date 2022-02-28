@@ -39,7 +39,7 @@ void string_clear()
 void set_displayArray(int x, int y, int height, int width)
 {
 	int row, column;
-	for (row = 0; column < 128; column++)
+	for (row = 0; row < 32; row++)
 	{
 		for( column = 0; column < 128; column++)
 		{
@@ -58,13 +58,13 @@ void castToScreen()
 	
 	for(page = 0; page < 4; page++)
 	{
-		for(column = 0; coulumn < 128; column++
+		for(column = 0; column < 128; column++)
 		{
 			pixelCount = 0;
 			binaryCount = 1;
 			for(row = 0; row < 8; row++)
 			{
-			    if(display_array[8 * page + row][column]
+			    if(display_array[8 * page + row][column])
 			       {
 				       pixelCount |= binaryCount;
 			       }
