@@ -48,8 +48,78 @@ void paddle1_collision()
     {
       ball_speed = 1;
     }
-   }
   }
+// ** MISSING CODE HERE ** 
+}
+
+void paddle2_collision();
+{
+  if (paddle2_up == 1)
+  {
+    ball_speed_y = ball_speed_y * 2;
+  }
+  else if (ball_speed_y > 0)
+  {
+    ball_speed_y = ball_speed_y / 2;
+  }
+  else
+  {
+    ball_speed_y = -1;
+  }
+  
+  //** här var det else if bytte den.**
+  if (paddle2_down == 1)
+  {
+    if(ball_speed_y < 0)
+    {
+      ball_speed_y = ball_speed_y / 2;
+    }
+    else if(ball_speed_y > 0)
+    {
+      ball_speed_y = ball_speed_y * 2;
+    }
+    else
+    {
+      ball_speed = 1;
+    }
+  }
+// ** MISSING CODE HERE ** 
+}
+
+// ** paddle_hit()**
+// ** BALL COLLISION IF BALL IS HIT FROM THE SHORT SIDE OF PADDLES **
+void ball_collision()
+{
+  if(ball_x == paddle_width)
+  {
+    if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
+    {
+      ball_speed_x = -(ball_speed_x);
+      paddle1_physics();
+    }
+    else if(ball_x < -21)
+    {
+     // ** MISSING FUCNTION ** 
+     // goal(2)
+    }
+    // 
+    if (ball_x == (128 - paddle_width - 4))
+    {
+      if (((ball_y + ball_size) > paddle_y) && (ball_y - ball_size) < (paddle2_y + paddle_height))
+      {
+        ball_speed_x = -(ball_speedx);
+        paddle2_physics();
+      }
+      else if (ball_x > 138)
+      {
+       // ** MISSING FUNCTION **
+       // goal(1)
+      }
+    }
+  }
+}
+
+
 
 
 
