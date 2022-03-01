@@ -42,7 +42,7 @@ void paddle1_collision()
     }
     else if (ball_speed_y > 0)
     {
-      ball_speed_y = ball_speed_y * 2
+      ball_speed_y = ball_speed_y * 2;
     }
     else
     {
@@ -51,21 +51,7 @@ void paddle1_collision()
   }
 // ** MISSING CODE HERE **
 
-  if((ball_yPos + ball_size > paddle1_yPos) && (ball_yPos <= paddle1_yPos + 2)){
-      if(ball_speedy == 0) {
-        ball_speedy += -0.7;
-      }
-      else{
-          if(ball_speedy < 0){
-            ball_speedy *= 1.2;
-          }
-          else{
-              ball_speedy /= 1.2;
-          }
-      }
-  }
 
-}
 
 void paddle2_collision()
 {
@@ -116,12 +102,13 @@ void ball_collision()
      // ** MISSING FUCNTION ** 
      reset();
     }
+  }
     // 
     if (ball_x == (128 - paddle_width - 4))
     {
-      if (((ball_y + ball_shape) > paddle_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
+      if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
       {
-        ball_speed_x = -(ball_speedx);
+        ball_speed_x = -(ball_speed_x);
         paddle2_collision();
       }
       else if (ball_x > 138)
@@ -130,12 +117,4 @@ void ball_collision()
        reset();
       }
     }
-  }
-}
-
-
-
-
-
-
-
+ }
