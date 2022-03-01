@@ -49,7 +49,22 @@ void paddle1_collision()
       ball_speed_y = 1;
     }
   }
-// ** MISSING CODE HERE ** 
+// ** MISSING CODE HERE **
+
+  if((ball_yPos + ball_size > paddle1_yPos) && (ball_yPos <= paddle1_yPos + 2)){
+      if(ball_speedy == 0) {
+        ball_speedy += -0.7;
+      }
+      else{
+          if(ball_speedy < 0){
+            ball_speedy *= 1.2;
+          }
+          else{
+              ball_speedy /= 1.2;
+          }
+      }
+  }
+
 }
 
 void paddle2_collision()
@@ -86,8 +101,7 @@ void paddle2_collision()
 // ** MISSING CODE HERE ** 
 }
 
-// ** paddle_hit()**
-// ** BALL COLLISION IF BALL IS HIT FROM THE SHORT SIDE OF PADDLES **
+
 void ball_collision()
 {
   if(ball_x == paddle_width)
