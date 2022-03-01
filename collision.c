@@ -52,7 +52,7 @@ void paddle1_collision()
 // ** MISSING CODE HERE ** 
 }
 
-void paddle2_collision();
+void paddle2_collision()
 {
   if (paddle2_up == 1)
   {
