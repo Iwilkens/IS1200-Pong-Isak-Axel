@@ -100,7 +100,7 @@ void ball_collision()
     else if(ball_x < -21)
     {
      // ** MISSING FUCNTION ** 
-     // score(2)
+     void reset();
     }
     // 
     if (ball_x == (128 - paddle_width - 4))
@@ -113,7 +113,7 @@ void ball_collision()
       else if (ball_x > 138)
       {
        // ** MISSING FUNCTION **
-       // score(1)
+       void reset();
       }
     }
   }
