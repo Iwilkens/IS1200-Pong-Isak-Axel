@@ -12,14 +12,14 @@ float paddle_speed = 1;
 
 // Paddle #1 intial positioning
 float paddle1_x = 0;
-float paddle1_y = 32 / 2 -2; // Center paddle in middle of screen.
+float paddle1_y = 32 / 2; // Center paddle in middle of screen.
 // Paddle #1 movement variables
 float paddle1_up = 0;
 float paddle1_down = 0;
 
 // Paddle #2 intial positioning
 float paddle2_x = 128 - 4; // total length minus width of paddle. 1 pixel to spare.
-float paddle2_y = 32 / 2 - 2;
+float paddle2_y = 32 / 2;
 // Paddle #2 movement variables
 float paddle2_up = 0;
 float paddle2_down = 0;
@@ -118,6 +118,7 @@ void ball_motion()
 		ball_speed_y = -1.7;
 
 	// If statement to give ball negative speed when it collisions with oled y border.
+	// **TESTA ATT ÄNDRA "31"?**
 	if (ball_y < 1 || ball_y > (31 - ball_shape))
 	{
 		ball_speed_y = -(ball_speed_y);
