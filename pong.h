@@ -8,6 +8,7 @@ Written by @Isak Wilkens,
 
 // Menu functions
 void menu(void);
+void creditsMenu(void);
 
 // Screen functions
 void display_clear(void);
@@ -22,18 +23,24 @@ void computer_motion(void);
 
 // Game funcitons
 void multiplayer(int);
+void quit(void);
+
+// Collision functions
+void paddle1_collision(void);
+void paddle2_collision(void);
+void ball_collision(void);
+extern void reset(void);
 
 // ** Global variables **
-
 // Menu variables
 extern int menu_chooser;
-extern int dogmenu_running;
+extern int credits_active;
 
 // Screen definitions
 extern uint8_t display_array[32][128];
 extern uint8_t	display_pixels[512];
 
-extern void reset();
+
 
 // Motion variables
 
