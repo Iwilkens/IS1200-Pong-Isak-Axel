@@ -5,8 +5,11 @@
 #include <stdlib.h>
 #include "pong.h"
 
+
+
 // ** RULES FOR COLLISION **
 // ** ANGLE VS SPEED? **
+
 
 void paddle1_collision()
 {
@@ -17,7 +20,8 @@ void paddle1_collision()
 // If the ball is coming from a 0 degree angle = nudge ball.
   
   if(paddle1_up == 1)
-    if(ball_speed_y < 0)
+  {
+	if(ball_speed_y < 0)
     {
       ball_speed_y = ball_speed_y * 2; 
     }
@@ -28,7 +32,10 @@ void paddle1_collision()
     else
     {
       ball_speed_y = -1;
-    }
+    }  
+  }
+
+    
   
 // ** PADDLE MOVING DOWNWARDS **
 // If ball is coming from an upward angle ball angle = * 2.
@@ -36,7 +43,8 @@ void paddle1_collision()
 // If ball is coming from a 0 degree angle = nudge ball.
   
   if(paddle1_down == 1)
-    if(ball_speed_y < 0)
+  {
+	if(ball_speed_y < 0)
     {
       ball_speed_y = ball_speed_y / 2;
     }
@@ -47,26 +55,107 @@ void paddle1_collision()
     else
     {
       ball_speed_y = 1;
-    }
+    } 
   }
+	
+    
+	
+
 // ** MISSING CODE HERE **
+// kod för paddels ovansida
+
+
+if((ball_y + ball_shape > paddle1_y) && (ball_y <= paddle1_y + 2))
+{
+      if(ball_speed_y == 0)
+	  {
+        ball_speed_y += -0.7;
+      }
+      else{
+          if(ball_speed_y < 0)
+		  {
+            ball_speed_y *= 1.2;
+          }
+          else{
+              ball_speed_y /= 1.2;
+          }
+      }
+ }
+	
+  if((ball_y > paddle1_y + 6) && (ball_y - ball_shape < paddle1_y + 8)){
+      if(ball_speed_y == 0) {
+        ball_speed_y += 0.7;
+      }
+      else{
+          if(ball_speed_y > 0){
+            ball_speed_y *= 1.2;
+          }
+          else{
+              ball_speed_y /= 1.2;
+          }
+      }
+  }
+	
+	
+	
+	
+	
+  }
+
+
+
 
 
 
 void paddle2_collision()
 {
-  if (paddle2_up == 1)
-  {
-    ball_speed_y = ball_speed_y * 2;
+	
+	
+	
+// ** MISSING CODE HERE ** 
+
+ if((ball_y + ball_shape > paddle2_y) && (ball_y <= paddle2_y + 3))
+ {
+      if(ball_speed_y == 0) {
+        ball_speed_y += -0.7;
+      }
+      else{
+          if(ball_speed_y < 0){
+            ball_speed_y *= 1.2;
+          }
+          else{
+              ball_speed_y /= 1.2;
+          }
+      }
   }
-  else if (ball_speed_y > 0)
+  
+  if((ball_y > paddle2_y + 5) && (ball_y - ball_shape < paddle2_y + 8))
   {
-    ball_speed_y = ball_speed_y / 2;
+      if(ball_speed_y == 0) {
+        ball_speed_y += 0.7;
+      }
+      else{
+          if(ball_speed_y > 0){
+            ball_speed_y *= 1.2;
+          }
+          else{
+              ball_speed_y /= 1.2;
+          }
+      }
+      
   }
-  else
-  {
-    ball_speed_y = -1;
-  }
+ if(paddle2_up == 1)
+ {
+    if(ball_speed_y < 0) {
+      ball_speed_y = ball_speed_y * 2;
+    }
+    else if(ball_speed_y > 0) {
+      ball_speed_y = ball_speed_y / 2;
+    }
+    else {
+      ball_speed_y = -1;
+    }
+ }
   
   //** här var det else if bytte den.**
   if (paddle2_down == 1)
@@ -83,8 +172,13 @@ void paddle2_collision()
     {
       ball_speed_y = 1;
     }
-  }
-// ** MISSING CODE HERE ** 
+ }
+
+
+
+
+
+
 }
 
 
@@ -104,17 +198,17 @@ void ball_collision()
   reset();
   }  
     // 
-    if (ball_x == (128 - paddle_width - 4))
+  if (ball_x == (128 - paddle_width - 4))
+  {
+    if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
     {
-      if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
-      {
         ball_speed_x = -(ball_speed_x);
         paddle2_collision();
-      }
     }
-    else if (ball_x > 138)
-    {
+  }
+  else if (ball_x > 138)
+  {
     // ** MISSING FUNCTION **
     reset();
-    }
+  }
  }
