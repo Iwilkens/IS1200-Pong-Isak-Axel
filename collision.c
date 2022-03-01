@@ -56,94 +56,12 @@ void paddle1_collision()
     {
       ball_speed_y = 1;
     } 
-  }
-	
-    
-	
-
-// ** MISSING CODE HERE **
-// kod för paddels ovansida
-
-
-if((ball_y + ball_shape > paddle1_y) && (ball_y <= paddle1_y + 2))
-{
-      if(ball_speed_y == 0)
-	  {
-        ball_speed_y += -0.7;
-      }
-      else{
-          if(ball_speed_y < 0)
-		  {
-            ball_speed_y *= 1.2;
-          }
-          else{
-              ball_speed_y /= 1.2;
-          }
-      }
+  }	
  }
-	
-  if((ball_y > paddle1_y + 6) && (ball_y - ball_shape < paddle1_y + 8)){
-      if(ball_speed_y == 0) {
-        ball_speed_y += 0.7;
-      }
-      else{
-          if(ball_speed_y > 0){
-            ball_speed_y *= 1.2;
-          }
-          else{
-              ball_speed_y /= 1.2;
-          }
-      }
-  }
-	
-	
-	
-	
-	
-  }
-
-
-
-
 
 
 void paddle2_collision()
 {
-	
-	
-	
-// ** MISSING CODE HERE ** 
-
- if((ball_y + ball_shape > paddle2_y) && (ball_y <= paddle2_y + 3))
- {
-      if(ball_speed_y == 0) {
-        ball_speed_y += -0.7;
-      }
-      else{
-          if(ball_speed_y < 0){
-            ball_speed_y *= 1.2;
-          }
-          else{
-              ball_speed_y /= 1.2;
-          }
-      }
-  }
-  
-  if((ball_y > paddle2_y + 5) && (ball_y - ball_shape < paddle2_y + 8))
-  {
-      if(ball_speed_y == 0) {
-        ball_speed_y += 0.7;
-      }
-      else{
-          if(ball_speed_y > 0){
-            ball_speed_y *= 1.2;
-          }
-          else{
-              ball_speed_y /= 1.2;
-          }
-      }
-      
-  }
  if(paddle2_up == 1)
  {
     if(ball_speed_y < 0) {
@@ -156,8 +74,7 @@ void paddle2_collision()
       ball_speed_y = -1;
     }
  }
-  
-  //** här var det else if bytte den.**
+ 
   if (paddle2_down == 1)
   {
     if(ball_speed_y < 0)
@@ -172,13 +89,7 @@ void paddle2_collision()
     {
       ball_speed_y = 1;
     }
- }
-
-
-
-
-
-
+  }
 }
 
 
@@ -212,3 +123,6 @@ void ball_collision()
     reset();
   }
  }
+ 
+ 
+ 
