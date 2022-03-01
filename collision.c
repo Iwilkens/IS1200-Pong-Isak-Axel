@@ -80,7 +80,7 @@ void paddle2_collision();
     }
     else
     {
-      ball_speed = 1;
+      ball_speed_y = 1;
     }
   }
 // ** MISSING CODE HERE ** 
