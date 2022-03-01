@@ -7,44 +7,51 @@
 
 
 int menu_chooser = 0;
-int dogmenu_running = 0;
+int credits_active = 0;
 
 void menu()
 {
   if(menu_chooser == 0)
   {
-	  display_string(0, "->Main Menu");
-	  display_string(1, "  Singleplayer");
-	  display_string(2, "  Multiplayer");
+	  display_string(0, "->Start Game");
+	  display_string(1, "  Credits");
+	   if( getbtns() & 0x1)
+	  {
+		reset();
+		game_active = 1;
+		string_clear();
+	  }
   }	  
   else if(menu_chooser == 1)
   {
-	  display_string(0, "  Main Menu");
-	  display_string(1, "->Singleplayer");
-	  display_string(2, "  Multiplayer");
-  }	  
-  else if(menu_chooser == 2)
-  {
-	  display_string(0, "  Main Menu");
-	  display_string(1, "  Singleplayer");
-	  display_string(2, "->Multiplayer");
-	  
-	  if( getbtns() & 0x1)
+	  display_string(0, "  Start Game");
+	  display_string(1, "->Credits");
+	     if( getbtns() & 0x1)
 	  {
+		credits_active = 1;
 		string_clear();
-		dogmenu_running = 1;
 	  }
-		
-  }	  
+  }	  	  
   
-  if ((getbtns() & 0x2) && (menu_chooser < 2))
+  if ((getbtns() & 0x2) && (menu_chooser < 1))
 	  menu_chooser++;
   else if ((getbtns() & 0x4) && (menu_chooser > 0))
 	  menu_chooser--;
+  
+  
   display_update();
 }
 
-void dogmenu()
+void creditsMenu()
 {
-	display_image(96, icon);
+	display_string(0, "Game made by");
+	display_string(1, "@Isak Wilkens");
+	display_string(2, "@Axel M. L.");
+	display_string(3, "Press1 to return");
+	if( getbtns() & 0x1)
+	{
+		credits_active = 0;
+		string_clear();
+	}
+	display_update();
 }
