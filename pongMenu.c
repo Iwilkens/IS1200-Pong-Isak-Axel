@@ -44,11 +44,12 @@ void menu()
 
 void creditsMenu()
 {
+	delay(150);
 	display_string(0, "Game made by");
 	display_string(1, "@Isak Wilkens");
 	display_string(2, "@Axel M. L.");
-	display_string(3, "Press1 to return");
-	if( getbtns() & 0x1)
+	display_string(3, "Press2 to return");
+	if(getbtns() & 0x2)
 	{
 		credits_active = 0;
 		string_clear();
