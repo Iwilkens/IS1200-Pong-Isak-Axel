@@ -14,7 +14,7 @@ void paddle1_collision()
 // ** PADDLE MOVING UPWARDS **
 // If the ball is coming from an upward angle ball angle = * 2.
 // If the ball is coming from a downward angle ball angle = / 2.
-// If the ball is coming from a 0 degree angle = nudge ball upwards.
+// If the ball is coming from a 0 degree angle = nudge ball.
   
   if(paddle1_up == 1)
     if(ball_speed_y < 0)
@@ -33,7 +33,7 @@ void paddle1_collision()
 // ** PADDLE MOVING DOWNWARDS **
 // If ball is coming from an upward angle ball angle = * 2.
 // If ball is coming from a downward angle ball angle = / 2.
-// If ball is coming from a 0 degree angle = nudge ball downwards.
+// If ball is coming from a 0 degree angle = nudge ball.
   
   if(paddle1_down == 1)
     if(ball_speed_y < 0)
