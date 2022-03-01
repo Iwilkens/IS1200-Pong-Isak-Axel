@@ -43,11 +43,13 @@ void labinit( void )
 							
 						
 	
+	IPCSET(4) = 0x1f << 24;  // Sätter priority protocol syns på sidan 53. Samma här med högsta prio 7 och subprio 3
+	
 	IECSET(0) = (1<<8);      // enable external interrupt 2 (INT2), PIC32 Family data sheet sidan 53.
 	
 	
 	enable_interrupt();		// kallar på funktionen från labwork.S för att enabla interrupts globally
-	
+	return;
 }
 
 /* This function is called repetitively from the main program */
@@ -65,6 +67,12 @@ void labwork( void )
 /* Interrupt Service Routine */
 void user_isr( void )
 {
+	
+	if (IFS(0) & (1 << 19))  //Kollar flaggan på bit 19 enligt PiC data sheet s.52, flaggan för external interrupt 4
+	{
+		quit();
+		IFSCLR(0) = (1 << 19);
+    }
 	if (IFS(0) & 0x0100)
 	{
 		timeoutcount++;
