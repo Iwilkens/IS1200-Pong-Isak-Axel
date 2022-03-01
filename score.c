@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include "pong.h"
 
-/*
 int score_player1 = 0;
 int score_player2 = 0;
 
@@ -14,19 +13,37 @@ void score (player)
   if(player == 1)
   {
     score_player1 += 1;
-    display_string("Player one: score!")
-    display_update();
-    delay(2000);
+    if(score_player1 == 3)
+    {
+      display_string("Player one WINS!");
+      display_update();
+      delay(2000);
+      // back2menu();
+    }
+    else
+    {
+      display_string("Player one score!")
+      display_update();
+      delay(2000);
+      // reset();
+    }
   }
   else if (player == 2)
   {
     score_player2 += 1;
+    if (score_player2 == 3)
+    {
+      display_string("Player two WINS!");
+      display_update();
+      delay(2000);
+      // back2menu();
+    }
     display_string("Player two: score!")
     display_update();
     delay(2000);
+    // reset();
   }
 }
-*/
   
 void reset()
 {
