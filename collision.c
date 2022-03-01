@@ -97,12 +97,12 @@ void ball_collision()
       ball_speed_x = -(ball_speed_x);
       paddle1_collision();
     }
-    else if(ball_x < -21)
-    {
-     // ** MISSING FUCNTION ** 
-     reset();
-    }
   }
+  else if(ball_x < -21)
+  {
+  // ** MISSING FUCNTION ** 
+  reset();
+  }  
     // 
     if (ball_x == (128 - paddle_width - 4))
     {
