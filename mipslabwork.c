@@ -57,6 +57,7 @@ void labwork( void )
 			int switches = getsw();
 			if(game_active)
 				multiplayer(buttons);
+			
 }
 
 
@@ -68,8 +69,10 @@ void user_isr( void )
 		timeoutcount++;
 		if (timeoutcount == 1)
 		{
-			if(!game_active)
+			if(!game_active && !credits_active)
 				menu();
+			if(credits_active)
+				creditsMenu();
 			timeoutcount = 0;
 		}
 		IFSCLR(0) = 0x0100;
