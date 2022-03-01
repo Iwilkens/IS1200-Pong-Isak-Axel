@@ -15,27 +15,12 @@
 
 int timeoutcount = 0;
 
-/* Interrupt Service Routine */
-void user_isr( void )
-{
-	if (IFS(0) & 0x0100)
-	{
-		timeoutcount++;
-		if (timeoutcount == 1)
-		{
-			if(!dogmenu_running)
-				menu();
-			if(dogmenu_running)
-				dogmenu();
-			timeoutcount = 0;
-		}
-		IFSCLR(0) = 0x0100;
-	}
-}
+
 
 /* Lab-specific initialization goes here */
 void labinit( void )
 {
+
 	TRISD &= 0x0fe0;		// sätter VOLATILE pointer TRISDs värde för bitar 5-11 till 1
 	TRISF &= 0x2;			// samma för TRISF (knapp1)
 	
@@ -43,7 +28,7 @@ void labinit( void )
 	T2CON = 0x0;     // stop timer and clear control register
 	T2CONSET = 0x70; // sätter prescaling till 1:256 blir 0111 0000, vi sätter alltså TCKPS bitarna till den sista varianten
 	TMR2 = 0x0;      // clear timer register
-	PR2 = (80000000/256/10); // Load period register, vi delar 80 M till största prescaling
+	PR2 = (80000000/256); // Load period register, vi delar 80 M till största prescaling
 	// och får då 312500 beräningar per sekund. Vi måste ha 1:256 prescaling för att det ska få plats på en 16-bitars timer (2^16)
 	// när vi sedan delar på 10 för att få 100 ms
 	
@@ -62,12 +47,31 @@ void labinit( void )
 	
 	
 	enable_interrupt();		// kallar på funktionen från labwork.S för att enabla interrupts globally
-	return;
+	
 }
 
 /* This function is called repetitively from the main program */
 void labwork( void )
 {
-	int buttons = getbtns();
-	int switches = getsw();
+			int buttons = getbtns();
+			int switches = getsw();
+			if(game_active)
+				multiplayer(buttons);
+}
+
+
+/* Interrupt Service Routine */
+void user_isr( void )
+{
+	if (IFS(0) & 0x0100)
+	{
+		timeoutcount++;
+		if (timeoutcount == 1)
+		{
+			if(!game_active)
+				menu();
+			timeoutcount = 0;
+		}
+		IFSCLR(0) = 0x0100;
+	}
 }
