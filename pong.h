@@ -7,18 +7,21 @@ Written by @Isak Wilkens,
 // ** Functions **
 
 // Menu functions
-void menu();
-void dogmenu();
+void menu(void);
 
 // Screen functions
-void display_clear();
-void string_clear();
-void castToScreen();
+void display_clear(void);
+void string_clear(void);
+void castToScreen(void);
+void set_displayArray(int, int, int, int);
 
 // Motion functions
-void singleplayer_motion();
-void multiplayer_motion();
-void computer_motion();
+void singleplayer_motion(int);
+void multiplayer_motion(int);
+void computer_motion(void);
+
+// Game funcitons
+void multiplayer(int);
 
 // ** Global variables **
 
@@ -53,5 +56,14 @@ extern float ball_speed_y;
 extern float ball_speed_x;
 extern int ball_y;
 extern int ball_x;
-
 extern int count;
+
+// game variables
+extern int game_active;
+extern int game_mode;
+extern int player;
+extern int lives;
+
+// main file vairables
+extern int buttons;
+extern int switches;
