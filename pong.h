@@ -33,6 +33,8 @@ extern int dogmenu_running;
 extern uint8_t display_array[32][128];
 extern uint8_t	display_pixels[512];
 
+extern void reset();
+
 // Motion variables
 
 // Paddle
