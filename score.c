@@ -44,6 +44,7 @@ void reset()
   display_clear();
   set_displayArray(paddle1_x, paddle1_y, paddle_width, paddle_height);
   set_displayArray(paddle2_x, paddle2_y, paddle_width, paddle_height);
+  set_displayArray(ball_x, ball_y, ball_shape, ball_shape);
   castToScreen();
   display_image(0, display_pixels);
 }
