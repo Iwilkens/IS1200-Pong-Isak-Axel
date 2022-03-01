@@ -38,6 +38,7 @@ int ball_y = 32 / 2;
 // ** ??? ***
 int count = 0;
 
+/*
 // Function for singleplayer motion.
 // (player_movement_one)
 void singleplayer_motion (buttons)
@@ -65,6 +66,7 @@ void singleplayer_motion (buttons)
       paddle1_y -= paddle_speed;
    }
   }
+*/
       
   // Function for multiplayer movement.
   // (player_movement_two)
