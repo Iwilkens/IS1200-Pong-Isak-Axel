@@ -95,7 +95,7 @@ void ball_collision()
     if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
     {
       ball_speed_x = -(ball_speed_x);
-      paddle1_physics();
+      paddle1_collision();
     }
     else if(ball_x < -21)
     {
@@ -108,7 +108,7 @@ void ball_collision()
       if (((ball_y + ball_size) > paddle_y) && (ball_y - ball_size) < (paddle2_y + paddle_height))
       {
         ball_speed_x = -(ball_speedx);
-        paddle2_physics();
+        paddle2_collision();
       }
       else if (ball_x > 138)
       {
