@@ -8,9 +8,6 @@
 
 
 // ** RULES FOR COLLISION **
-// ** ANGLE VS SPEED? **
-
-
 void paddle1_collision()
 {
   
