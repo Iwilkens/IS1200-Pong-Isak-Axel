@@ -50,4 +50,16 @@ Kommer ej spela någon roll för hur spelet spelas, men tycker vi ska göra lite
     }  
   }
   
-  ---
+---
+
+Gjorde ändring i score filen, om player1 eller player 2 har fått 3 poäng så går vi in i en if sats där
+jag nollställde poängen och annonserade att spelare 1 eller 2 vunnit. 
+
+---
+
+TO DO
+Behöver en funktion eller dylikt för att ta oss tillbaka till menyn när en av spelarna vunnit så vi kan spela spelet igen.
+
+TO DO (i mån om tid)
+Lägg till en scoreboard på planen som visar poängen.
+
