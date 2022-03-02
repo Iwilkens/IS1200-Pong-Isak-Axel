@@ -69,7 +69,8 @@ void ball_motion() {
   ball_x += ball_speed_x;    // changes in the balls position relative to speed (movement)
   ball_y += ball_speed_y;
   
- // control of speed in y directions
+ // control of speed in y direction.
+ // ensure that ball speed have a limit.
   if(ball_speed_y > 1.7){
     ball_speed_y = 1.7;
   }
@@ -77,13 +78,13 @@ void ball_motion() {
     ball_speed_y = -1.7;
   }
 
-// If statement to give ball negative speed when it collisions with oled y border.
+  // If statement to give ball negative speed when it collisions with oled y border.
   if (ball_y < 0 || ball_y > (31 - ball_shape)) {
     ball_speed_y = -(ball_speed_y);
   }
   
  
- // if the ball gets stuck in y direction, count up and then give it y-speed
+   // if the ball gets stuck in y direction, count up and then give it y-speed
    if((ball_speed_y < 0.3) && (ball_y <= 10)) {
      count++;
      if(count >= 10){
