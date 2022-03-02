@@ -73,7 +73,7 @@ void display_clear()
 	}
 }
 
-
+// rensar bort string från display_string funktionen
 void string_clear()
 {
 	display_string(0, "");
