@@ -92,14 +92,18 @@ void paddle2_collision()
   }
 }
 
-
+// Function to detect collision between ball and paddle1.
 void ball_collision()
 {
+// X coordinate satisfied.
   if(ball_x == paddle_width)
   {
+    // Y coordinate satisfied.
     if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
     {
+      // Both Y & X satisfied = hit. Change direction of ball.
       ball_speed_x = -(ball_speed_x);
+      // Run logic for paddle collision.
       paddle1_collision();
     }
   }
@@ -107,8 +111,9 @@ void ball_collision()
   {
   // ** MISSING FUCNTION ** 
   reset();
-  }  
-    // 
+  }
+  
+  // Function to detect collision between ball and paddle2.
   if (ball_x == (128 - paddle_width - 4))
   {
     if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
