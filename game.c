@@ -10,7 +10,7 @@ int game_mode = 0;
 int player = 0;
 int lives = 0;
 
-
+//game function, runs player motion, ball motion, ball collision and draw paddles and ball
 void multiplayer(buttons)
 {
 	multiplayer_motion(buttons);
@@ -25,12 +25,12 @@ void multiplayer(buttons)
 	display_image(0, display_pixels);
 }
 
+// reset score variables and return to the main menu
 void quit()
 {
 	game_active = 0;
-	player1_score = 0;
-	player2_score = 0;
-	// resetta poäng?
+	score_player1 = 0;
+	score_player2 = 0;
 	display_clear();
 	castToScreen();
 	display_image(0, display_pixels);
