@@ -16,6 +16,8 @@ if (((ball_y + ball_shape) >= paddle1_y) && (ball_y - ball_shape) <= (paddle1_y 
 ---
 
 Testa ändra if satsen som ser till att bollen inte limmas fast i taket av oled skärmen.
+Egentligen samma fast utan count variablen.
+
 if(ball_speed_y < 0.3) && (ball_y <= 10))
 {
  ball_speed_y = 1;
@@ -23,16 +25,17 @@ if(ball_speed_y < 0.3) && (ball_y <= 10))
 
 ---
 
-Ändra värden på PADDLE height, BALL shape.
 Ta bort dessa minus för att det inte ska vara så likt.
 int ball_x = 128 / 2 - 5
 float paddle2_y = 32 / 2 - 2;
 float paddle1_y = 32 / 2 - 2;
 
+Vi skulle också kunna testa att ändra värdet på paddles storlek / bollen med någon pixel?
+
 ---
 
-Ändra på logiken för denna, vända på hur den funkar?
-Kommer ej spela någon roll för hur spelet spelas, men tycker vi ska göra lite olika tester.
+Tycker vi ska invertera logiken för denna. (paddle 1 och paddle 2 collision).
+Kommer ej spela någon roll för hur spelet spelas.
 
  if(paddle1_up == 1)
   {
@@ -52,8 +55,7 @@ Kommer ej spela någon roll för hur spelet spelas, men tycker vi ska göra lite
   
 ---
 
-Gjorde ändring i score filen, om player1 eller player 2 har fått 3 poäng så går vi in i en if sats där
-jag nollställde poängen och annonserade att spelare 1 eller 2 vunnit. 
+Låg en kommentar i quit funktionen om att reseta player score, la in så den resetas där. tycker det är bra att det ligger i quit funktionen.
 
 ---
 
