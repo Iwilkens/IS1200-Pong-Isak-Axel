@@ -8,6 +8,9 @@
 
 
 // ** RULES FOR COLLISION **
+// ** ANGLE VS SPEED? **
+
+
 void paddle1_collision()
 {
   
@@ -86,8 +89,8 @@ void paddle2_collision()
     {
       ball_speed_y = 1;
     }
-  }
-}
+ }
+
 
 // Function to detect collision between ball and paddle1.
 void ball_collision()
@@ -95,22 +98,21 @@ void ball_collision()
 // X coordinate satisfied.
   if(ball_x == paddle_width)
   {
-    // Y coordinate satisfied.
+	// Y coordinate satisfied.
     if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
     {
-      // Both Y & X satisfied = hit. Change direction of ball.
+	  // Both Y & X satisfied = hit. Change direction of ball.
       ball_speed_x = -(ball_speed_x);
-      // Run logic for paddle collision.
+	  // Run logic for paddle collision.
       paddle1_collision();
     }
   }
   else if(ball_x < -21)
   {
-  // ** MISSING FUCNTION ** 
-  reset();
-  }
-  
-  // Function to detect collision between ball and paddle2.
+	  // run score function if paddle misses
+	  score(1);
+  }  
+    // 
   if (ball_x == (128 - paddle_width - 4))
   {
     if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
@@ -121,10 +123,6 @@ void ball_collision()
   }
   else if (ball_x > 138)
   {
-    // ** MISSING FUNCTION **
-    reset();
+	  score(2);
   }
  }
- 
- 
- 
