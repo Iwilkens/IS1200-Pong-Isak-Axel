@@ -15,7 +15,7 @@ if (((ball_y + ball_shape) >= paddle1_y) && (ball_y - ball_shape) <= (paddle1_y 
 
 ---
 
-Ändra if satsen som ser till att bollen inte limmas fast i taket av oled skärmen.
+Testa ändra if satsen som ser till att bollen inte limmas fast i taket av oled skärmen.
 if(ball_speed_y < 0.3) && (ball_y <= 10))
 {
  ball_speed_y = 1;
@@ -24,7 +24,7 @@ if(ball_speed_y < 0.3) && (ball_y <= 10))
 ---
 
 Ändra värden på PADDLE height, BALL shape.
-Ta bort dessa minus för att göra större skillnad.
+Ta bort dessa minus för att det inte ska vara så likt.
 int ball_x = 128 / 2 - 5
 float paddle2_y = 32 / 2 - 2;
 float paddle1_y = 32 / 2 - 2;
