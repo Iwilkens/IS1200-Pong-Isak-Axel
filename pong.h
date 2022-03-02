@@ -17,19 +17,20 @@ void castToScreen(void);
 void set_displayArray(int, int, int, int);
 
 // Motion functions
-void singleplayer_motion(int);
 void multiplayer_motion(int);
 void computer_motion(void);
 
 // Game funcitons
 void multiplayer(int);
 void quit(void);
+void reset(void);
+void score(int);
 
 // Collision functions
 void paddle1_collision(void);
 void paddle2_collision(void);
 void ball_collision(void);
-extern void reset(void);
+
 
 // ** Global variables **
 // Menu variables
@@ -39,8 +40,6 @@ extern int credits_active;
 // Screen definitions
 extern uint8_t display_array[32][128];
 extern uint8_t	display_pixels[512];
-
-
 
 // Motion variables
 
@@ -76,3 +75,5 @@ extern int lives;
 // main file vairables
 extern int buttons;
 extern int switches;
+int score_player1;
+int score_player2;
