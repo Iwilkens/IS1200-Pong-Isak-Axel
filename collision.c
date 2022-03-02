@@ -102,7 +102,7 @@ void ball_collision()
     if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
     {
 	  // Both Y & X satisfied = hit. Change direction of ball.
-      ball_speed_x = -(ball_speed_x);
+      ball_speed_x = (ball_speed_x * -1);
 	  // Run logic for paddle collision.
       paddle1_collision();
     }
@@ -117,7 +117,7 @@ void ball_collision()
   {
     if (((ball_y + ball_shape) > paddle2_y) && (ball_y - ball_shape) < (paddle2_y + paddle_height))
     {
-        ball_speed_x = -(ball_speed_x);
+        ball_speed_x = (ball_speed_x * -1);
         paddle2_collision();
     }
   }
