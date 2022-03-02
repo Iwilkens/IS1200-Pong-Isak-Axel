@@ -80,7 +80,7 @@ void ball_motion() {
 
   // If statement to give ball negative speed when it collisions with oled y border.
   if (ball_y < 0 || ball_y > (31 - ball_shape)) {
-    ball_speed_y = -(ball_speed_y);
+    ball_speed_y = (ball_speed_y * -1);
   }
   
  
