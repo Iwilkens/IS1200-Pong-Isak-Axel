@@ -28,7 +28,8 @@ void multiplayer(buttons)
 void quit()
 {
 	game_active = 0;
-	
+	player1_score = 0;
+	player2_score = 0;
 	// resetta poäng?
 	display_clear();
 	castToScreen();
