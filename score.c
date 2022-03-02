@@ -15,6 +15,7 @@ void score (player)
     score_player1 += 1;
     if(score_player1 == 3)
     {
+      score_player1 = 0;
       display_string("Player one WINS!");
       display_update();
       delay(2000);
@@ -33,6 +34,8 @@ void score (player)
     score_player2 += 1;
     if (score_player2 == 3)
     {
+      // resets player 2 score.
+      score_player2 = 0;
       display_string("Player two WINS!");
       display_update();
       delay(2000);
