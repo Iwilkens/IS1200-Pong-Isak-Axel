@@ -30,7 +30,8 @@ int ball_x = 128 / 2 - 5
 float paddle2_y = 32 / 2 - 2;
 float paddle1_y = 32 / 2 - 2;
 
-Vi skulle också kunna testa att ändra värdet på paddles storlek / bollen med någon pixel?
+Ändra dessa:
+paddle_size;
 
 ---
 
