@@ -77,3 +77,4 @@ vilka av dessa använder vi?
 
 Ändra dessa värden i collision filen som bestämmer när det är är mål.
 else if (ball_x > 138)
+else if (ball_x < -21)
