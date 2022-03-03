@@ -32,6 +32,7 @@ float paddle1_y = 32 / 2 - 2;
 
 Ändra dessa:
 paddle_size;
+paddle_width; (till samma som bollen 2)
 
 ---
 
