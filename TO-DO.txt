@@ -63,3 +63,17 @@ Till:
 if (ball_y <= 0 || ball_y >= (32 - ball_shape)) 
 Och ta bort count funktionen för att se om bollen fortfarande limmas i taket.
 
+---
+
+Dessa ligger i game.c
+
+int game_active = 0;
+int game_mode = 0;
+int player = 0;
+int lives = 0;
+
+vilka av dessa använder vi?
+
+---
+
+
