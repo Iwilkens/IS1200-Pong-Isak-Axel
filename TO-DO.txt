@@ -52,16 +52,9 @@ Kommer ej spela någon roll för hur spelet spelas.
       ball_speed_y = -1;
     }  
   }
-  
----
-
-Låg en kommentar i quit funktionen om att reseta player score, la in så den resetas där. tycker det är bra att det ligger i quit funktionen.
 
 ---
 
-La till kommentarer lite här och var bland annat i collision filen.
-
----
 Testa att skriva om denna:
 if (ball_y < 0 || ball_y > (31 - ball_shape))
 Till:
