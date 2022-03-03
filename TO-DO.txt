@@ -62,8 +62,9 @@ Låg en kommentar i quit funktionen om att reseta player score, la in så den re
 La till kommentarer lite här och var bland annat i collision filen.
 
 ---
-
-TO DO
-– Behöver en funktion eller dylikt för att ta oss tillbaka till menyn när en av spelarna vunnit så vi kan spela spelet igen.
-– Byt ut reset funktionen som just nu ligger inlagd om det blir mål till score funktionen, denna måste testas för att se hur den funkar.
+Testa att skriva om denna:
+if (ball_y < 0 || ball_y > (31 - ball_shape))
+Till:
+if (ball_y <= 0 || ball_y >= (32 - ball_shape)) 
+Och ta bort count funktionen för att se om bollen fortfarande limmas i taket.
 
