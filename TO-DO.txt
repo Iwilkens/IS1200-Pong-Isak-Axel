@@ -14,6 +14,13 @@ Button 4 = buttons (1).
 if (((ball_y + ball_shape) >= paddle1_y) && (ball_y - ball_shape) <= (paddle1_y + paddle_height))
 
 ---
+Testa att skriva om denna:
+if (ball_y < 0 || ball_y > (31 - ball_shape))
+Till:
+if (ball_y <= 0 || ball_y >= (32 - ball_shape)) 
+Och ta bort count funktionen för att se om bollen fortfarande limmas i taket.
+
+Om ovan inte funkar: 
 
 Testa ändra if satsen som ser till att bollen inte limmas fast i taket av oled skärmen.
 Egentligen samma fast utan count variablen.
@@ -54,14 +61,6 @@ Kommer ej spela någon roll för hur spelet spelas.
       ball_speed_y = -1;
     }  
   }
-
----
-
-Testa att skriva om denna:
-if (ball_y < 0 || ball_y > (31 - ball_shape))
-Till:
-if (ball_y <= 0 || ball_y >= (32 - ball_shape)) 
-Och ta bort count funktionen för att se om bollen fortfarande limmas i taket.
 
 ---
 
