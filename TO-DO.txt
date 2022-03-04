@@ -3,10 +3,10 @@ Skärmen har 32x 128 pixlar. Skärmen har 512 minnesbytes för alla pixlar (4096
 
 PORTF = Button 1 längst till höger.
 
-Button 1 = buttons (8).
-Button 2 = buttons (4).
-Button 3 = buttons (2).
-Button 4 = buttons (1).
+Button 1 = buttons (1).
+Button 2 = buttons (2).
+Button 3 = buttons (4).
+Button 4 = buttons (8).
 
 ** ATT TESTA **
 
