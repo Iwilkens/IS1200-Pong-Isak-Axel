@@ -19,7 +19,6 @@ void menu()
 	  display_string(1, "  Credits");
 	   if( getbtns() & 0x1)
 	  {
-		reset();
 		game_active = 1;
 		string_clear();
 	  }
