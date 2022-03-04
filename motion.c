@@ -12,7 +12,7 @@ float paddle_speed = 1;
 
 // Paddle #1 intial positioning
 float paddle1_x = 0;
-float paddle1_y = 32 / 2 - 2;
+float paddle1_y = 32 / 2;
 // Paddle #1 movement variables
 float paddle1_up = 0;
 float paddle1_down = 0;
@@ -20,7 +20,7 @@ float paddle1_down = 0;
 
 // Paddle #2 intial positioning
 float paddle2_x = 128 - 4; // total length minus width of paddle. 1 pixel to spare.
-float paddle2_y = 32 / 2 - 2;
+float paddle2_y = 32 / 2;
 // Paddle #2 movement variables
 float paddle2_up = 0;
 float paddle2_down = 0;
@@ -33,7 +33,7 @@ float ball_speed_y = 0;
 
 int ball_x = 128 / 2 - 5;
 int ball_y = 32 / 2;
-int count = 0;
+//int count = 0;
 
 // Function for multiplayer movement.
 // (player_movement_two)
@@ -67,42 +67,24 @@ void multiplayer_motion(buttons)
 
 }
 
-
-
 void ball_motion() 
 {
   ball_x += ball_speed_x;    // changes in the balls position relative to speed (movement)
   ball_y += ball_speed_y;
   
  // control of speed in y directions
-  if(ball_speed_y > 1.7)
+  if(ball_speed_y > 1.6)
   {
-    ball_speed_y = 1.7;
+    ball_speed_y = 1.6;
   }
-  if(ball_speed_y < -1.7)
+  if(ball_speed_y < -1.6)
   {
-    ball_speed_y = -1.7;
+    ball_speed_y = -1.6;
   }
 
 // If statement to give ball negative speed when it collisions with oled y border.
-  if (ball_y < 0 || ball_y > (31 - ball_shape)) 
+  if (ball_y <= 0 || ball_y >= (32 - ball_shape)) 
   {
-    ball_speed_y = -(ball_speed_y);
-  }
-  
- 
- // if the ball gets stuck in y direction, count up and then give it y-speed
-   if((ball_speed_y < 0.3) && (ball_y <= 10)) 
-   {
-     count++;
-     if(count >= 10)
-	 {
-       ball_speed_y = 1;
-       count = 0;
-     }
-   }
-   else
-   {
-     count = 0;
-   }
+    ball_speed_y = (ball_speed_y * -1);
+  } 
 }
