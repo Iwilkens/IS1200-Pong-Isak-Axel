@@ -33,7 +33,6 @@ float ball_speed_y = 0;
 
 int ball_x = 128 / 2 - 5;
 int ball_y = 32 / 2;
-//int count = 0;
 
 // Function for multiplayer movement.
 // (player_movement_two)
@@ -66,6 +65,8 @@ void multiplayer_motion(buttons)
   }
 
 }
+
+
 
 void ball_motion() 
 {
