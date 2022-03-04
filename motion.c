@@ -45,8 +45,8 @@ void multiplayer_motion(buttons)
   paddle1_up = 0;
   paddle1_down = 0;
 
-  // if statements for buttons sending paddle up / down.
-  if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height))) {
+  if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height))) 
+  {
     paddle2_y += paddle_speed;
     paddle2_up = 1;
   }
@@ -54,50 +54,55 @@ void multiplayer_motion(buttons)
     paddle2_y -= paddle_speed;
     paddle2_down = 1;
   }
-  if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))) {
+  if ((buttons & 0x4) && (paddle1_y < (32 - paddle_height))) 
+  {
     paddle1_y += paddle_speed;
     paddle1_up = 1;
   }
-  if ((buttons & 0x8) && (paddle1_y > 0)) {
+  if ((buttons & 0x8) && (paddle1_y > 0)) 
+  {
     paddle1_y -= paddle_speed;
     paddle1_down = 1;
   }
+
 }
 
 
 
-void ball_motion()
+void ball_motion() 
 {
-  // Ball movement.
-  ball_x += ball_speed_x;    
+  ball_x += ball_speed_x;    // changes in the balls position relative to speed (movement)
   ball_y += ball_speed_y;
   
- // control of speed in y direction.
- // ensure that ball speed have a limit.
-  if(ball_speed_y > 1.7){
+ // control of speed in y directions
+  if(ball_speed_y > 1.7)
+  {
     ball_speed_y = 1.7;
   }
-  if(ball_speed_y < -1.7){
+  if(ball_speed_y < -1.7)
+  {
     ball_speed_y = -1.7;
   }
 
-  // If statement to send ball in opposite y-direction when it collisions with screen border.
-  if (ball_y < 0 || ball_y > (31 - ball_shape)) {
-    ball_speed_y = (ball_speed_y * -1);
+// If statement to give ball negative speed when it collisions with oled y border.
+  if (ball_y < 0 || ball_y > (31 - ball_shape)) 
+  {
+    ball_speed_y = -(ball_speed_y);
   }
   
  
-   // if the ball gets stuck in y direction, count up and then give it y-speed
-   if((ball_speed_y < 0.3) && (ball_y <= 10)) {
+ // if the ball gets stuck in y direction, count up and then give it y-speed
+   if((ball_speed_y < 0.3) && (ball_y <= 10)) 
+   {
      count++;
-     if(count >= 10){
+     if(count >= 10)
+	 {
        ball_speed_y = 1;
        count = 0;
      }
    }
-   else{
+   else
+   {
      count = 0;
    }
-
-   
 }
