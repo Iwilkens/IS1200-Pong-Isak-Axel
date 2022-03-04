@@ -78,7 +78,7 @@ void ball_motion() {
     ball_speed_y = -1.7;
   }
 
-  // If statement to give ball negative speed when it collisions with oled y border.
+  // If statement to send ball in opposite y-direction when it collisions with screen border.
   if (ball_y < 0 || ball_y > (31 - ball_shape)) {
     ball_speed_y = (ball_speed_y * -1);
   }
