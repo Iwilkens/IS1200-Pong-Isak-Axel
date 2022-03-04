@@ -64,13 +64,9 @@ extern float ball_speed_y;
 extern float ball_speed_x;
 extern int ball_y;
 extern int ball_x;
-extern int count;
 
 // game variables
 extern int game_active;
-extern int game_mode;
-extern int player;
-extern int lives;
 
 // main file vairables
 extern int buttons;
