@@ -117,7 +117,7 @@ void ball_collision()
         paddle2_collision();
     }
   }
-  // No collision. Ball of bounds = score for player 1.	 
+  // No collision. Ball out of bounds = score for player 1.	 
   else if (ball_x > 138)
   {
 	  // Run score function with value of player who score
