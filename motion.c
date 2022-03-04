@@ -45,6 +45,7 @@ void multiplayer_motion(buttons)
   paddle1_up = 0;
   paddle1_down = 0;
 
+  // if statements for buttons sending paddle up / down.
   if ((buttons & 0x1) && (paddle2_y < (32 - paddle_height))) {
     paddle2_y += paddle_speed;
     paddle2_up = 1;
@@ -65,8 +66,10 @@ void multiplayer_motion(buttons)
 
 
 
-void ball_motion() {
-  ball_x += ball_speed_x;    // changes in the balls position relative to speed (movement)
+void ball_motion()
+{
+  // Ball movement.
+  ball_x += ball_speed_x;    
   ball_y += ball_speed_y;
   
  // control of speed in y direction.
