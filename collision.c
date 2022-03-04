@@ -11,19 +11,19 @@
 void paddle1_collision()
 {
 // ** PADDLE MOVING UPWARDS **
-// If the ball is coming from an upward angle ball angle = * 2.
-// If the ball is coming from a downward angle ball angle = / 2.
+// If the ball is coming from an upward angle ball angle = * 1.8.
+// If the ball is coming from a downward angle ball angle = / 1.8.
 // If the ball is coming from a 0 degree angle = nudge ball.
   
   if(paddle1_up == 1)
   {
 	if(ball_speed_y < 0)
     {
-      ball_speed_y = ball_speed_y * 2; 
+      ball_speed_y = ball_speed_y * 1.8; 
     }
     else if(ball_speed_y > 0)
     {
-      ball_speed_y = ball_speed_y / 2;
+      ball_speed_y = ball_speed_y / 1.8;
     }
     else
     {
@@ -31,21 +31,19 @@ void paddle1_collision()
     }  
   }
 
-    
-  
 // ** PADDLE MOVING DOWNWARDS **
-// If ball is coming from an upward angle ball angle = * 2.
-// If ball is coming from a downward angle ball angle = / 2.
+// If ball is coming from an upward angle ball angle = * 1.8.
+// If ball is coming from a downward angle ball angle = / 1.8.
 // If ball is coming from a 0 degree angle = nudge ball.
   if(paddle1_down == 1)
   {
 	if(ball_speed_y < 0)
     {
-      ball_speed_y = ball_speed_y / 2;
+      ball_speed_y = ball_speed_y / 1.8;
     }
     else if (ball_speed_y > 0)
     {
-      ball_speed_y = ball_speed_y * 2;
+      ball_speed_y = ball_speed_y * 1.8;
     }
     else
     {
@@ -61,11 +59,11 @@ void paddle2_collision()
  {
     if(ball_speed_y < 0) 
 	{
-      ball_speed_y = ball_speed_y * 2;
+      ball_speed_y = ball_speed_y * 1.8;
     }
     else if(ball_speed_y > 0)
 	{
-      ball_speed_y = ball_speed_y / 2;
+      ball_speed_y = ball_speed_y / 1.8;
     }
     else 
 	{
@@ -77,11 +75,11 @@ void paddle2_collision()
   {
     if(ball_speed_y < 0)
     {
-      ball_speed_y = ball_speed_y / 2;
+      ball_speed_y = ball_speed_y / 1.8;
     }
     else if(ball_speed_y > 0)
     {
-      ball_speed_y = ball_speed_y * 2;
+      ball_speed_y = ball_speed_y * 1.8;
     }
     else
     {
@@ -97,7 +95,7 @@ void ball_collision()
   if(ball_x == paddle_width)
   {
 	// Y coordinate satisfied.
-    if (((ball_y + ball_shape) > paddle1_y) && (ball_y - ball_shape) < (paddle1_y + paddle_height))
+    if (((ball_y + ball_shape) >= paddle1_y) && (ball_y - ball_shape) <= (paddle1_y + paddle_height))
     {
 	  // Both Y & X satisfied = hit. Change direction of ball.
       ball_speed_x = -(ball_speed_x);
@@ -105,7 +103,7 @@ void ball_collision()
       paddle1_collision();
     }
   }
-  else if(ball_x < -21)
+  else if(ball_x < -12)
   {
 	  // run score function if paddle misses
 	  score(1);
@@ -119,7 +117,7 @@ void ball_collision()
         paddle2_collision();
     }
   }
-  else if (ball_x > 138)
+  else if (ball_x > 140)
   {
 	  score(2);
   }
