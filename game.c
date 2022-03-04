@@ -6,9 +6,6 @@
 #include "pong.h"
 
 int game_active = 0;
-int game_mode = 0;
-int player = 0;
-int lives = 0;
 
 //game function, runs player motion, ball motion, ball collision and draw paddles and ball
 void multiplayer(buttons)
