@@ -82,3 +82,13 @@ else if (ball_x < -21)
 ---
 
 ** La till nya kommentarer i Collision **
+
+---
+Ändra dessa värden till typ 1.8 eller 1.65.
+
+  if(ball_speed_y > 1.7){
+    ball_speed_y = 1.7;
+  }
+  if(ball_speed_y < -1.7){
+    ball_speed_y = -1.7;
+  }
