@@ -5,8 +5,10 @@
 #include <stdlib.h>
 #include "pong.h"
 
-
+// variable to track which menu option that is currently active
 int menu_chooser = 0;
+
+// variable for credits 
 int credits_active = 0;
 
 void menu()
