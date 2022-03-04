@@ -10,10 +10,12 @@ Button 4 = buttons (8).
 
 ** ATT TESTA **
 
+**
 Ändra if statement så den använder ">=" och "<=" istället för ">" och "<".
 if (((ball_y + ball_shape) >= paddle1_y) && (ball_y - ball_shape) <= (paddle1_y + paddle_height))
+**
 
----
+
 Testa att skriva om denna:
 if (ball_y < 0 || ball_y > (31 - ball_shape))
 Till:
@@ -41,8 +43,7 @@ float paddle1_y = 32 / 2 - 2;
 paddle_size;
 paddle_width; (till samma som bollen 2)
 
----
-
+**
 Tycker vi ska invertera logiken för denna. (paddle 1 och paddle 2 collision).
 Kommer ej spela någon roll för hur spelet spelas.
 
@@ -61,8 +62,7 @@ Kommer ej spela någon roll för hur spelet spelas.
       ball_speed_y = -1;
     }  
   }
-
----
+**
 
 Dessa ligger i game.c
 
@@ -73,17 +73,15 @@ int lives = 0;
 
 vilka av dessa använder vi?
 
----
-
+**
 Ändra dessa värden i collision filen som bestämmer när det är är mål.
 else if (ball_x > 138)
 else if (ball_x < -21)
-
----
+**
 
 ** La till nya kommentarer i Collision **
 
----
+**
 Ändra dessa värden till typ 1.8 eller 1.65.
 
   if(ball_speed_y > 1.7){
@@ -92,3 +90,4 @@ else if (ball_x < -21)
   if(ball_speed_y < -1.7){
     ball_speed_y = -1.7;
   }
+**
